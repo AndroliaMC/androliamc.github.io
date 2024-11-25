@@ -1,0 +1,532 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+#logo {
+    width: 120px; /* Taille du logo */
+    margin: 0 20px;
+    transition: transform 0.3s ease-in-out; /* Animation du logo au survol */
+}
+
+/* Animation du logo au survol */
+#logo:hover {
+    transform: translateY(-10px); /* Le logo remonte */
+}
+
+button {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition du fond et de la taille */
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    justify-content: center;
+}
+
+/* Effet de zoom au survol */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Agrandissement des boutons */
+}
+
+.button-text,
+.button-hover-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease; /* Animation fluide */
+}
+
+.button-text {
+    transform: translateY(0);
+}
+
+.button-hover-text {
+    transform: translateY(100%);
+}
+
+/* Animation au survol pour les boutons */
+button:hover .button-text {
+    transform: translateY(-100%); /* Le texte normal défile vers le haut */
+}
+
+button:hover .button-hover-text {
+    transform: translateY(0); /* Le texte du nombre de joueurs/membres apparaît */
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+}
+#logo {
+    width: 200px; /* Augmente la taille du logo à 200px */
+    margin: 0 20px;
+    transition: transform 0.3s ease-in-out; /* Animation du logo au survol */
+}
+
+/* Animation du logo au survol */
+#logo:hover {
+    transform: translateY(-10px); /* Le logo remonte */
+}
+button {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.8); /* Effet de glow permanent */
+}
+
+/* Effet de zoom au survol */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Agrandissement des boutons */
+}
+
+/* Styles du texte des boutons */
+.button-text,
+.button-hover-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+.button-text {
+    transform: translateY(0);
+}
+
+.button-hover-text {
+    transform: translateY(100%);
+}
+
+/* Animation du texte au survol */
+button:hover .button-text {
+    transform: translateY(-100%); /* Le texte normal défile vers le haut */
+}
+
+button:hover .button-hover-text {
+    transform: translateY(0); /* Le texte secondaire apparaît */
+}
+
+/* Animation du logo au survol : élévation et agrandissement léger */
+#logo:hover {
+    transform: translateY(-10px) scale(1.07); /* Le logo remonte et s'agrandit légèrement */
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Empêche le défilement */
+}
+
+main {
+    position: relative;
+    z-index: 2; /* Permet que le contenu principal soit au-dessus de la neige */
+}
+
+#logo-link {
+    position: relative;
+    z-index: 3; /* Le logo reste visible au-dessus de tout */
+}
+
+/* Background divisé en deux parties */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+body::before {
+    top: 0;
+    background-image: url('assets/top-image.jpg'); /* Image supérieure */
+}
+
+body::after {
+    bottom: 0;
+    background-image: url('assets/bottom-image.jpg'); /* Image inférieure */
+}
+
+/* Effet de neige */
+#snow-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%; /* Limite l'effet de neige à la partie supérieure */
+    overflow: hidden;
+    pointer-events: none; /* Empêche d'interagir avec la neige */
+    z-index: 2;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: fall 5s linear infinite, sway 3s ease-in-out infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(200%);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Empêche le défilement */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+/* Fond divisé en deux sections */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%; /* Chaque section occupe 50% */
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+body::before {
+    top: 0;
+    background-image: url('assets/top-image.jpg'); /* Image pour la partie supérieure */
+}
+
+body::after {
+    bottom: 0;
+    background-image: url('gold.png'); /* Image pour la partie inférieure */
+}
+
+main {
+    position: relative;
+    z-index: 2; /* Contenu au-dessus du fond */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#logo-link {
+    position: relative;
+    z-index: 3;
+}
+
+/* Effet de neige */
+#snow-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%; /* Limite l'effet de neige à la partie supérieure */
+    overflow: hidden;
+    pointer-events: none; /* Empêche d'interagir avec la neige */
+    z-index: 2;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: fall 5s linear infinite, sway 3s ease-in-out infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(200%);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: auto;
+}
+/* Styles de base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Empêche le défilement */
+    position: relative;
+    height: 100vh;
+}
+
+/* Conteneur pour le fond */
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Images superposées */
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintient le ratio tout en remplissant l'écran */
+}
+
+/* Gestion de la superposition */
+#top-image {
+    z-index: 2; /* L'image du haut est au-dessus */
+}
+
+#bottom-image {
+    z-index: 1; /* L'image du bas est en dessous */
+}
+
+main {
+    position: relative;
+    z-index: 3; /* Le contenu est au-dessus des images */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Effet de neige */
+#snow-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* La neige est entre les deux images */
+}
+
+.snowflake {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: fall 5s linear infinite, sway 3s ease-in-out infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+footer {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: auto;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: url('assets/bg-top.jpg') top center no-repeat, url('assets/bg-bottom.jpg') bottom center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* La neige ne couvre que la moitié supérieure */
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+
+#center-container {
+    position: relative;
+    z-index: 2; /* Les boutons et le logo sont au-dessus de la neige */
+    text-align: center;
+}
+
+button, #logo {
+    z-index: 2; /* Garde les éléments au-dessus de la neige */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    z-index: 2;
+}
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh); /* Le flocon descend jusqu'en bas */
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: url('assets/bg-top.jpg') top center no-repeat, url('assets/bg-bottom.jpg') bottom center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#center-container {
+    position: relative;
+    z-index: 2; /* Contenu au-dessus de la neige */
+    text-align: center;
+}
+
+button, #logo {
+    z-index: 2; /* Assure que les éléments restent visibles */
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px; /* Commence juste au-dessus du conteneur */
+    color: white;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0); /* Départ */
+    }
+    100% {
+        transform: translateY(100vh); /* Descend sur toute la hauteur de l'écran */
+    }
+}
+/* Importer la police Minecraft depuis le fichier local */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraft.ttf') format('truetype'); /* Chemin du fichier .ttf */
+}
+
+/* Appliquer la police à tout le site */
+body {
+    font-family: 'Minecraft', sans-serif;
+}
+
+/* Styles spécifiques */
+
+
+input, button {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 16px;
+}

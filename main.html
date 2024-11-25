@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Androlia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background">
+        <img src="" alt="" class="background-layer" id="top-image">
+        <img src="bg.png" alt="" class="background-layer" id="bottom-image">
+        <div id="snow-container"></div> <!-- Contient la neige, appliquée sur l'image du bas -->
+    </div>
+    <main>
+        <div id="snow-container"></div>
+        <div id="center-container">
+            <button id="copy-ip" onmouseover="" onmouseout="" onclick="copyIP()">
+                <span class="button-text">Jouer</span>
+                <span class="button-hover-text" id="mc-players">Chargement...</span>
+            </button>
+            <a href="main.html" id="logo-link">
+                <img src="assets/logo.png" alt="Logo d'Androlia" id="logo">
+            </a>
+            <button id="discord-btn" onmouseover="" onmouseout="">
+                <span class="button-text">Discord</span>
+                <span class="button-hover-text" id="discord-members">Chargement...</span>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Androlia - Tous droits réservés</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
